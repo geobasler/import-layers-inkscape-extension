@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <name>Import Layers</name>
+  <id>gb.export.visible.layers</id>
+  <param name="file_name" type="path" mode="file" gui-text="File"></param>
+  <param name="mode" type="optiongroup" gui-text="Import mode">
+      <option value="visible">only visible layers</option>
+      <option value="not-visible">only invisible layers</option>
+      <option value="all">all layers</option>
+  </param>
+  <param name="parent" type="string" gui-text="Parent layer for imported layers"></param>
+  <param name="prefix" type="string" gui-text="Import prefix"></param>
+  <param name="with_defs" type="boolean" gui-text="Import with definitions">true</param>
+  <effect needs-live-preview="false">
+      <object-type>all</object-type>
+      <effects-menu>
+          <submenu name="Import"></submenu>
+      </effects-menu>
+  </effect>
+  <script>
+      <command location="inx" interpreter="python">import_layers.py</command>
+  </script>
+</inkscape-extension>
